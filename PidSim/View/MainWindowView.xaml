@@ -1,0 +1,48 @@
+﻿<Window x:Class="PidSim.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:local="clr-namespace:PidSim"
+        mc:Ignorable="d"
+        Title="PID" Height="450" Width="1200" MinHeight="450" MinWidth="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- Графики -->
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- График значений ПИД -->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <oxy:PlotView Model="{Binding systemGraph.plotModel}"/>
+                </Grid>
+
+                <!-- Температурная карта -->
+                <Grid Grid.Row="0" Grid.Column="1">
+                    <oxy:PlotView Model="{Binding heatGraph.plotModel}"/>
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+
+        
+        
+
+        <!-- Параметры -->
+        <Grid Grid.Row="0" Grid.Column="1">
+
+        </Grid>
+
+    </Grid>
+</Window>
